@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>bootstrap5- task- manager</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Bootstrap 5 JS (required for toggler) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!--navbar-->
+    <header>
+      <p class="h2 bg-primary text-white text-center py-3">My first website bootstrap5</p>
+      <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+        <div class="container">
+          <a class="navbar-brand" href="#">Task manager</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample"><span class="navbar-toggler-icon"></span></button>
+          <div class="container-fluid collapse navbar-collapse" id="collapseExample">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item"><a class="nav-link active" href="#">Deshboard</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">order</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">settings</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!--Breadcrump-->
+      <nav class="m-3">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">Deshboard</li>
+          <li class="breadcrumb-item">Home</li>
+          <li class="breadcrumb-item">order</li>
+          <li class="breadcrumb-item active">settings</li>
+        </ol>
+      </nav>
+    </header>
+    <main>
+      <div class="container-fluid">
+        <!--Buttons-->
+        <button type="button" class="btn btn-primary mx-2" data-bs-toggle="modal" data-bs-target="#addTask">Add Task</button>
+      </div>
+      <!--Cards-->
+      <div class="card m-3">
+        <div class="card-header ">Task List</div>
+        <div class="card-body">
+          <!--Displaying List-->
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item active d-flex justify-content-between align-items-center">Order 1<span class="badge bg-secondary rounded">Waiting for delivery</span></li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">Order 2<span class="badge bg-warning">in-process</span></li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">Order 3<span class="badge bg-success">Delivery</span></li>
+            <li class="list-group-item d-flex justify-content-between align-content-center">Order 4<span class="badge bg-danger">cancel</span></li>
+          </ul>
+        </div>
+        <!--Model list iTems-->
+        <div class="modal fade" id="addTask">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <p class="h4 modal-title">Add List Items</p>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="mb-3">
+                    <label for="taskname" class="form-label">Order name</label>
+                    <input type="text" class="form-control" id="taskname" placeholder="Order name" />
+                  </div>
+                  <div>
+                    <label for="orderDescription" class="form-label">Order Description</label>
+                    <textarea id="orderDescription" placeholder="Description"  class="form-control"></textarea>
+                  </div>
+
+                  <div>
+                    <label for="inputGroupSelect01">Order Satus</label>
+                    <select class="custom-select form-select" id="inputGroupSelect01">
+                    <option selected>Choose...</option>
+                    <option>Waiing for delivery</option>
+                    <option>In-Process</option>
+                    <option>Delivery</option>
+                    <option>Cancel</option>
+
+                   </select>
+                  </div>
+                  <div class="modal-footer">
+                    <button class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+                    <button class="btn btn-primary">Add task</button>
+                  </div>
+                 
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Dropdown-->
+    <div class="container-fluid mt-1 mx-2">
+  <div class="dropdown">
+    <button
+      class="btn btn-success dropdown-toggle"
+      type="button"
+      id="dropdownMenuButton"
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+    >
+      Select Order
+    </button>
+
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <li><a class="dropdown-item" href="#">Order 1</a></li>
+      <li><a class="dropdown-item" href="#">Order 2</a></li>
+      <li><a class="dropdown-item" href="#">Order 3</a></li>
+      <li><a class="dropdown-item" href="#">Order 4</a></li>
+    </ul>
+  </div>
+
+  <!--Nav && abes-->
+  <div class="mt-4">
+   <ul class="nav nav-pills">
+    <li class="nav-item"><button class="nav-link active" data-bs-target="#allTask">All task</button></li>
+    <li class="nav-item"><button class="nav-link">Completed task</button></li>
+    <li class="nav-item"><button class="nav-link">pending task</button></li>
+    <li  class="nav-item"><button class="nav-link">Cancel task</button></li>
+   </ul>
+  </div>
+  <div class="mt-4">
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <a class="nav-link active" data-bs-toggle="tab" data-bs-target="#allTask" type="button" role="tab">
+        All Tasks
+      </a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link" data-bs-toggle="tab" data-bs-target="#completedTask" type="button" role="tab">
+        Completed
+      </a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link" data-bs-toggle="tab" data-bs-target="#pendingTask" type="button" role="tab">
+        Pending
+      </a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">
+        Disabled
+      </a>
+    </li>
+  </ul>
+
+  <div class="tab-content mt-3" id="myTabContent">
+    <div class="tab-pane fade show active text-success" id="allTask" role="tabpanel">
+      <p>All the tasks should be displayed here.</p>
+    </div>
+    <div class="tab-pane fade text-danger" id="completedTask" role="tabpanel" >
+      <p>All the tasks that are completed.</p>
+    </div>
+    <div class="tab-pane fade text-info" id="pendingTask" role="tabpanel">
+      <p>All pending tasks should be displayed here.</p>
+    </div>
+  </div>
+</div>
+<nav aria-label="...">
+  <ul class="pagination">
+    <li class="page-item disabled">
+      <span class="page-link">Previous</span>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item active">
+      <span class="page-link">
+        2
+        <span class="sr-only">(current)</span>
+      </span>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#">Next</a>
+    </li>
+  </ul>
+</nav>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    </main>
+  </body>
+</html>
